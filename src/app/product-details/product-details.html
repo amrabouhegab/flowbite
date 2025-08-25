@@ -1,0 +1,201 @@
+<div class="bg-gray-50 min-h-screen py-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="flex mb-8" aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+          <a href="#" class="text-sm text-gray-700 hover:text-blue-600">Home</a>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-gray-400 mx-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <a href="#" class="text-sm text-gray-700 hover:text-blue-600">Electronics</a>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 text-gray-400 mx-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-sm text-gray-500">iPhone 15 Pro Max</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- Product Details Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+      <!-- Left: Product Images -->
+      <div class="space-y-4">
+        <!-- Main Image -->
+        <div class="aspect-square w-full rounded-lg bg-white p-4 shadow-sm">
+          <img [src]="product.images[product.currentImageIndex]" 
+               [alt]="product.name"
+               class="w-full h-full object-cover rounded-md">
+        </div>
+        
+        <!-- Thumbnail Images -->
+        <div class="grid grid-cols-4 gap-2">
+          @for (image of product.images; track image; let i = $index) {
+            <button (click)="selectImage(i)"
+                    [class]="'aspect-square rounded-md border-2 p-1 transition-colors ' + 
+                             (i === product.currentImageIndex ? 'border-blue-500' : 'border-gray-200')">
+              <img [src]="image" 
+                   [alt]="product.name + ' view ' + (i + 1)"
+                   class="w-full h-full object-cover rounded">
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="space-y-6">
+        <!-- Product Title & Rating -->
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900 mb-2">{{ product.name }}</h1>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center">
+              <div class="flex text-yellow-400">
+                @for (star of [1,2,3,4,5]; track star) {
+                  <svg [class]="'w-5 h-5 ' + (star <= product.rating ? 'fill-current' : 'text-gray-300')"
+                       viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                }
+              </div>
+              <span class="ml-2 text-sm text-gray-600">{{ product.rating }} ({{ product.reviewCount }} reviews)</span>
+            </div>
+            <span class="text-sm text-gray-500">•</span>
+            <span class="text-sm text-gray-500">In Stock</span>
+          </div>
+        </div>
+
+        <!-- Price & Discount -->
+        <div class="flex items-center gap-3">
+          <span class="text-3xl font-bold text-gray-900">${{ product.price }}</span>
+          <span class="text-xl text-gray-500 line-through">${{ product.originalPrice }}</span>
+          <span class="px-2 py-1 text-sm font-medium bg-red-100 text-red-800 rounded-full">
+            Save {{ product.discount }}%
+          </span>
+        </div>
+
+        <!-- Features -->
+        <div>
+          <h3 class="text-sm font-medium text-gray-900 mb-3">Key Features</h3>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            @for (feature of product.features; track feature) {
+              <li class="flex items-center text-sm text-gray-600">
+                <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                {{ feature }}
+              </li>
+            }
+          </ul>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-3">
+          <button (click)="addToCart()" 
+                  class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+            Add to Cart
+          </button>
+          <button (click)="addToWishlist()" 
+                  class="w-full border border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+            Add to Wishlist
+          </button>
+        </div>
+
+        <!-- Shipping Info -->
+        <div class="bg-gray-50 rounded-lg p-4">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-sm font-medium text-gray-900">Free & Fast Delivery</span>
+          </div>
+          <p class="text-sm text-gray-600">Get it by tomorrow with free same-day delivery</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Specifications -->
+    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">Specifications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        @for (spec of product.specifications | keyvalue; track spec.key  ) {
+          <div class="border-b border-gray-100 pb-3">
+            <dt class="text-sm font-medium text-gray-500">{{ spec.key }}</dt>
+            <dd class="text-sm text-gray-900 mt-1">{{ spec.value }}</dd>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="bg-white rounded-lg shadow-sm p-6">
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">You might also like</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Related Product Card -->
+        <div class="bg-gray-50 rounded-lg p-4">
+          <div class="aspect-square w-full rounded-md bg-gray-200 mb-3 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-sm font-medium text-gray-900 mb-1">iPhone 15 Pro</h3>
+          <p class="text-sm text-gray-500 mb-2">6.1-inch, 128GB</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">$999</span>
+            <button class="text-blue-600 text-sm hover:text-blue-700">View</button>
+          </div>
+        </div>
+
+        <!-- More related products... -->
+        <div class="bg-gray-50 rounded-lg p-4">
+          <div class="aspect-square w-full rounded-md bg-gray-200 mb-3 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-sm font-medium text-gray-900 mb-1">iPhone 15</h3>
+          <p class="text-sm text-gray-500 mb-2">6.1-inch, 128GB</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">$799</span>
+            <button class="text-blue-600 text-sm hover:text-blue-700">View</button>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-4">
+          <div class="aspect-square w-full rounded-md bg-gray-200 mb-3 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-sm font-medium text-gray-900 mb-1">iPhone 14 Pro</h3>
+          <p class="text-sm text-gray-500 mb-2">6.1-inch, 128GB</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">$899</span>
+            <button class="text-blue-600 text-sm hover:text-blue-700">View</button>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-4">
+          <div class="aspect-square w-full rounded-md bg-gray-200 mb-3 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-sm font-medium text-gray-900 mb-1">iPhone 14</h3>
+          <p class="text-sm text-gray-500 mb-2">6.1-inch, 128GB</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">$699</span>
+            <button class="text-blue-600 text-sm hover:text-blue-700">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
