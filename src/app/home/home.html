@@ -1,2 +1,621 @@
 <app-header />
 
+<!-- Main Content with Sidebar -->
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-6 py-8">
+  <!-- Filter Sidebar -->
+  <aside class="w-full lg:w-[220px] bg-white rounded-lg shadow-md p-6 lg:p-4 h-fit overflow-hidden">
+    <h3 class="text-lg font-semibold text-gray-800 mb-6">Filters</h3>
+    
+    <!-- Brand Section -->
+    <div class="border-b border-gray-200 pb-4 mb-4">
+      <div class="flex items-center justify-between mb-3 cursor-pointer">
+        <h4 class="font-medium text-gray-700">Brand</h4>
+        <svg class="w-5 h-5 text-gray-500 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+      </div>
+      
+      <!-- Search Input -->
+      <div class="relative mb-3">
+        <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" placeholder="Search for categories" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <!-- Brand List -->
+      <div class="space-y-2">
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">TV, Audio-Video</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Desktop PC</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Gaming</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Monitors</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Laptops</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Console</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Tablets</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Foto</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Fashion</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <span class="text-sm text-gray-700">Books</span>
+        </label>
+      </div>
+      
+      <button class="text-blue-600 text-sm font-medium mt-3 flex items-center hover:text-blue-700">
+        See more
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Rating Section -->
+    <div class="border-b border-gray-200 pb-4 mb-4">
+      <div class="flex items-center justify-between mb-3 cursor-pointer">
+        <h4 class="font-medium text-gray-700">Rating</h4>
+        <svg class="w-5 h-5 text-gray-500 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+      </div>
+      
+      <div class="space-y-2">
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <div class="flex items-center space-x-1">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="text-sm text-gray-700">(476)</span>
+          </div>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <div class="flex items-center space-x-1">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="text-sm text-gray-700">(125)</span>
+          </div>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <div class="flex items-center space-x-1">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="text-sm text-gray-700">(20)</span>
+          </div>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <div class="flex items-center space-x-1">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="text-sm text-gray-700">(10)</span>
+          </div>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+          <div class="flex items-center space-x-1">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="text-sm text-gray-700">(8)</span>
+          </div>
+        </label>
+      </div>
+      
+      <button class="text-blue-600 text-sm font-medium mt-3 flex items-center hover:text-blue-700">
+        View all
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Price Section -->
+    <div class="border-b border-gray-200 pb-4 mb-4">
+      <div class="flex items-center justify-between mb-3 cursor-pointer">
+        <h4 class="font-medium text-gray-700">Price</h4>
+        <svg class="w-5 h-5 text-gray-500 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+      </div>
+      
+      <div class="mb-3">
+        <button class="text-blue-600 text-sm font-medium flex items-center hover:text-blue-700">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Any Price
+        </button>
+      </div>
+      
+      <div class="space-y-2 mb-4">
+        <div class="text-sm text-gray-700">Under $10</div>
+        <div class="text-sm text-gray-700">$10 to $20</div>
+        <div class="text-sm text-gray-700">$20 to $30</div>
+        <div class="text-sm text-gray-700">$30 to $40</div>
+        <div class="text-sm text-gray-700">$40 to $50</div>
+        <div class="text-sm text-gray-700">$50 to $60</div>
+        <div class="text-sm text-gray-700">$60 to $70</div>
+        <div class="text-sm text-gray-700">$70 to $80</div>
+        <div class="text-sm text-gray-700">$80 to $90</div>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-sm text-gray-700 mb-1">From</label>
+          <input type="number" value="300" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700 mb-1">To</label>
+          <input type="number" value="3500" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+    </div>
+
+    <!-- Shipping Section -->
+    <div class="border-b border-gray-200 pb-4 mb-4">
+      <div class="flex items-center justify-between mb-3 cursor-pointer">
+        <h4 class="font-medium text-gray-700">Shipping</h4>
+        <svg class="w-5 h-5 text-gray-500 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+      </div>
+      
+      <div class="space-y-2">
+        <div class="bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
+          <div class="text-sm font-medium text-gray-700">ASIA</div>
+          <div class="text-xs text-gray-600">Delivery for Asia for $954</div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
+          <div class="text-sm font-medium text-gray-700">Africa</div>
+          <div class="text-xs text-gray-600">Delivery for Africa for $706,88</div>
+        </div>
+        <div class="bg-blue-600 text-white border border-blue-600 rounded-lg p-3 shadow-sm">
+          <div class="text-sm font-medium">Americas</div>
+          <div class="text-xs opacity-90">Delivery for USA for $365,35</div>
+        </div>
+        <div class="bg-blue-600 text-white border border-blue-600 rounded-lg p-3 shadow-sm">
+          <div class="text-sm font-medium">Australia/Oceania</div>
+          <div class="text-xs opacity-90">Delivery for Australia for $209,88</div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
+          <div class="text-sm font-medium text-gray-700">Europe</div>
+          <div class="text-xs text-gray-600">Delivery for Europe for $1,365,35</div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
+          <div class="text-sm font-medium text-gray-700">Antarctica</div>
+          <div class="text-xs text-gray-600">N/A</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsed Sections -->
+    <div class="space-y-3">
+      <div class="flex items-center justify-between cursor-pointer">
+        <h4 class="font-medium text-gray-700">Price</h4>
+        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+      <div class="flex items-center justify-between cursor-pointer">
+        <h4 class="font-medium text-gray-700">Operating System</h4>
+        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+      <div class="flex items-center justify-between cursor-pointer">
+        <h4 class="font-medium text-gray-700">Condition</h4>
+        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+      <div class="flex items-center justify-between cursor-pointer">
+        <h4 class="font-medium text-gray-700">Rating</h4>
+        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-1">
+    <!-- Featured Categories Section -->
+    <section class="py-12 bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Featured Categories</h2>
+        
+        <div class="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 lg:gap-6">
+            <!-- Laptops -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=200&fit=crop&crop=center" 
+                   alt="Laptops" 
+                   class="w-full h-auto object-cover rounded-md mb-3">
+              <span class="text-gray-700 font-medium text-base">Laptops</span>
+            </div>
+
+            <!-- Monitors -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300&h=200&fit=crop&crop=center" 
+                   alt="Monitors" 
+                   class="w-full h-auto object-cover rounded-md mb-3">
+              <span class="text-gray-700 font-medium text-base">Monitors</span>
+            </div>
+
+            <!-- Tablets -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=200&fit=crop&crop=center" 
+                   alt="Tablets" 
+                   class="w-full h-auto object-cover rounded-md mb-3">
+              <span class="text-gray-700 font-medium text-base">Tablets</span>
+            </div>
+
+            <!-- Gaming PC -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=300&h=200&fit=crop&crop=center" 
+                   alt="Gaming PC" 
+                   class="w-full h-auto object-cover rounded-md mb-3">
+              <span class="text-gray-700 font-medium text-base">Gaming PC</span>
+            </div>
+
+            <!-- Phones -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=200&fit=crop&crop=center" 
+                   alt="Phones" 
+                   class="w-full h-auto object-cover rounded-md mb-3">
+              <span class="text-gray-700 font-medium text-base">Phones</span>
+            </div>
+
+            <!-- PC Components -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=300&h=200&fit=crop&crop=center" 
+                   alt="PC Components" 
+                   class="w-full h-auto object-cover rounded-md mb-3">
+              <span class="text-gray-700 font-medium text-base">PC Components</span>
+            </div>
+
+            <!-- Printers -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" 
+                   alt="Printers" 
+                   class="w-full h-auto object-cover rounded-md mb-3">
+              <span class="text-gray-700 font-medium text-base">Printers</span>
+            </div>
+
+            <!-- Projectors -->
+            <div class="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" 
+                   alt="Projectors" 
+                   class="w-full h-auto object-cover rounded-md mb-3">
+              <span class="text-gray-700 font-medium text-base">Projectors</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Deals Section -->
+    <section class="py-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Featured Deals</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Deal Card -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <div class="aspect-[4/3] w-full rounded-md bg-gray-100 flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"/></svg>
+            </div>
+            <div class="text-xs text-blue-600 font-medium mb-1">Top Deal</div>
+            <h3 class="text-sm font-medium text-gray-900 line-clamp-2">APPLE iPhone 15 Pro Max 5G, 256GB, Natural Titanium</h3>
+            <div class="flex items-center gap-2 mt-2">
+              <div class="flex text-yellow-400">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="text-xs text-gray-500">4,7/5</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-lg font-semibold text-gray-900">$299</div>
+              <button class="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">Add to cart</button>
+            </div>
+          </div>
+
+          <!-- Repeatable sample cards -->
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <div class="aspect-[4/3] w-full rounded-md bg-gray-100 flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"/></svg>
+            </div>
+            <div class="text-xs text-blue-600 font-medium mb-1">Top Deal</div>
+            <h3 class="text-sm font-medium text-gray-900 line-clamp-2">LENOVO IdeaPad Gaming 3 16ACH6, AMD Ryzen 5</h3>
+            <div class="flex items-center gap-2 mt-2">
+              <div class="flex text-yellow-400">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="text-xs text-gray-500">4,1/5</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-lg font-semibold text-gray-900">$999</div>
+              <button class="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">Add to cart</button>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <div class="aspect-[4/3] w-full rounded-md bg-gray-100 flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"/></svg>
+            </div>
+            <div class="text-xs text-blue-600 font-medium mb-1">Top Deal</div>
+            <h3 class="text-sm font-medium text-gray-900 line-clamp-2">Microsoft - Xbox Series X 1TB Console</h3>
+            <div class="flex items-center gap-2 mt-2">
+              <div class="flex text-yellow-400">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="text-xs text-gray-500">3,0/5</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-lg font-semibold text-gray-900">$399</div>
+              <button class="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">Add to cart</button>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-4">
+            <div class="aspect-[4/3] w-full rounded-md bg-gray-100 flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"/></svg>
+            </div>
+            <div class="text-xs text-blue-600 font-medium mb-1">Top Deal</div>
+            <h3 class="text-sm font-medium text-gray-900 line-clamp-2">Apple iPad mini 256GB Wi‑Fi</h3>
+            <div class="flex items-center gap-2 mt-2">
+              <div class="flex text-yellow-400">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="text-xs text-gray-500">4,8/5</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-lg font-semibold text-gray-900">$499</div>
+              <button class="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">Add to cart</button>
+            </div>
+          </div>
+        </div>
+    </section>
+
+        <!-- Recently Viewed Section -->
+        <section class="py-8">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-6">Recently viewed</h2>
+  
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Recently Viewed Card -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+              <div class="aspect-[4/3] w-full rounded-md bg-gray-100 flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"/></svg>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-red-50 text-red-600 font-medium">Up to 15% off</span>
+                <div class="flex items-center gap-2 text-gray-400">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.74 0 3.41 1.01 4.22 2.53C11.09 5.01 12.76 4 14.5 4 17 4 19 6 19 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <h3 class="text-sm font-medium text-gray-900 line-clamp-2">APPLE iPhone 15 Pro Max 5G, 256GB, Natural Titanium</h3>
+              <div class="mt-1 text-xs text-gray-500">64.8K+ sold • 5.0 (5.0)</div>
+              <div class="mt-1 text-[11px] text-gray-500 flex items-center gap-3">
+                <span>Free & Fast Delivery</span>
+                <span>Best Price</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="text-lg font-semibold text-gray-900">$299</div>
+                <button class="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">Add to cart</button>
+              </div>
+            </div>
+  
+            <!-- Sample 2 -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+              <div class="aspect-[4/3] w-full rounded-md bg-gray-100 flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"/></svg>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-red-50 text-red-600 font-medium">Up to 20% off</span>
+                <div class="flex items-center gap-2 text-gray-400">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.74 0 3.41 1.01 4.22 2.53C11.09 5.01 12.76 4 14.5 4 17 4 19 6 19 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <h3 class="text-sm font-medium text-gray-900 line-clamp-2">LENOVO IdeaPad Gaming 3 15ACH6, AMD Ryzen 5</h3>
+              <div class="mt-1 text-xs text-gray-500">12.3K+ sold • 4.7 (4.7)</div>
+              <div class="mt-1 text-[11px] text-gray-500 flex items-center gap-3">
+                <span>Free & Fast Delivery</span>
+                <span>Best Price</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="text-lg font-semibold text-gray-900">$999</div>
+                <button class="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">Add to cart</button>
+              </div>
+            </div>
+  
+            <!-- Sample 3 -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+              <div class="aspect-[4/3] w-full rounded-md bg-gray-100 flex items-center justify-center mb-4">
+                <svg class="w-10 h-10 text-gray-400" fill ="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4"/></svg>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[11px] px-2 py-0.5 rounded bg-red-50 text-red-600 font-medium">Up to 18% off</span>
+                <div class="flex items-center gap-2 text-gray-400">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.74 0 3.41 1.01 4.22 2.53C11.09 5.01 12.76 4 14.5 4 17 4 19 6 19 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <h3 class="text-sm font-medium text-gray-900 line-clamp-2">Microsoft - Xbox Series X 1TB Console - Black</h3>
+              <div class="mt-1 text-xs text-gray-500">9.1K+ sold • 4.4 (4.4)</div>
+              <div class="mt-1 text-[11px] text-gray-500 flex items-center gap-3">
+                <span>Free & Fast Delivery</span>
+                <span>Best Price</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="text-lg font-semibold text-gray-900">$399</div>
+                <button class="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">Add to cart</button>
+              </div>
+            </div>
+          </div>
+      </section>
+  </main>
+</div>
+
+
+<!-- Footer -->
+<footer class="border-t border-gray-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Top help tiles -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-8 border-b border-gray-200">
+      <div class="flex gap-3">
+        <div class="h-10 w-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M3 3h18v2H3zM3 7h18v2H3zM3 11h18v2H3zM3 15h18v2H3zM3 19h18v2H3z"/></svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-900">Order Tracking & Shipping</h4>
+          <p class="text-sm text-gray-600">Check order status, view purchase info, or schedule delivery.</p>
+          <a class="text-sm text-blue-600 hover:text-blue-700" href="#">Track Your Order</a>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="h-10 w-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14H7v-2h6v2zm4-4H7V8h10v4z"/></svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-900">Our Credit Card</h4>
+          <p class="text-sm text-gray-600">Earn Rewards for today’s purchases and pay over time.</p>
+          <a class="text-sm text-blue-600 hover:text-blue-700" href="#">Apply Now</a>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="h-10 w-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M2 5a2 2 0 012-2h16a2 2 0 012 2v11a2 2 0 01-2 2H7l-5 3V5z"/></svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-gray-900">Contact Us</h4>
+          <p class="text-sm text-gray-600">Call, text, or email — we’re here to help.</p>
+          <a class="text-sm text-blue-600 hover:text-blue-700" href="#">Support Center</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link columns / newsletter / badges -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 py-8">
+      <div>
+        <h5 class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Make Money With Us</h5>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><a class="hover:text-gray-900" href="#">Sell on our Marketplace</a></li>
+          <li><a class="hover:text-gray-900" href="#">Advertise Your Products</a></li>
+          <li><a class="hover:text-gray-900" href="#">Affiliate Program</a></li>
+          <li><a class="hover:text-gray-900" href="#">Become a Supplier</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Payment Methods</h5>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li>Visa & Mastercard</li>
+          <li>Apple Pay</li>
+          <li>Gift Cards</li>
+          <li>Store Credit</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2">
+        <h5 class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Get the latest deals and more</h5>
+        <form class="flex gap-2">
+          <input type="email" placeholder="Your email address" class="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button class="px-4 py-2 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700">Subscribe</button>
+        </form>
+        <div class="mt-4 space-y-2">
+          <button class="w-full justify-center flex items-center gap-2 rounded-md bg-gray-900 text-white px-4 py-2 text-sm hover:bg-black">
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7a93.27 93.27 0 0 1 44.3 79.8c0 95.2-86.1 131.6-167.7 131.6C87.9 480.1 0 444 0 348.5c0-50.7 23.6-96.5 62.2-127.1 31.7-24.6 74.5-41.5 119.5-41.5 21.1 0 40.6 2.6 58 7.2 1.4 21.2-7.5 41.2-18.7 54.9-16.8 20.6-31.7 38.3-31.7 69.3 0 44.2 37.1 80 83 80 40.9 0 72.1-33.3 72.1-74.2 0-26.4-14.2-50.3-25.7-62.8z"/></svg>
+            Download on the App Store
+          </button>
+          <button class="w-full justify-center flex items-center gap-2 rounded-md bg-gray-900 text-white px-4 py-2 text-sm hover:bg-black">
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 53.9C95.7 46.7 80 53.1 80 66.8v378.5c0 13.6 15.5 20.1 24.5 12.9l220.8-180.4c8-6.5 8-19.3 0-25.8z"/></svg>
+            Get it on Google Play
+          </button>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Orders & Support</h5>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><a class="hover:text-gray-900" href="#">Your Account</a></li>
+          <li><a class="hover:text-gray-900" href="#">Order Status</a></li>
+          <li><a class="hover:text-gray-900" href="#">Returns & Exchanges</a></li>
+          <li><a class="hover:text-gray-900" href="#">Help Center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-gray-200">
+      <div class="flex items-center gap-2 text-gray-700">
+        <span class="text-blue-600">●</span>
+        <span class="font-semibold">Flowbite</span>
+      </div>
+      <div class="text-xs text-gray-500">
+        © 2025 Flowbite. All rights reserved. · Terms · Privacy · Cookies
+      </div>
+    </div>
+  </div>
+</footer>
+
