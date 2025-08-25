@@ -1,0 +1,16 @@
+/* Component-level tweaks that complement Tailwind utilities */
+:host {
+  display: block;
+}
+
+/* Make the category divider thinner on small screens */
+.category-divider {
+  height: 20px;
+}
+
+/* Improve focus outline contrast for header buttons */
+button:focus-visible {
+  outline: 2px solid #2563eb; /* blue-600 */
+  outline-offset: 2px;
+}
+
